@@ -1,0 +1,13 @@
+# Bibliotecas Principais
+pandas>=2.0.0
+geopandas>=0.13.0
+folium>=0.14.0
+branca>=0.6.0
+shapely>=2.0.0
+
+# Drivers de Dados
+fiona>=1.9.0
+pyproj>=3.5.0
+
+# Opcional para limpeza de dados (se necessário no futuro)
+numpy>=1.24.0
