@@ -1,0 +1,16 @@
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+
+data/*.shp
+data/*.dbf
+data/*.shx
+data/*.prj
+data/*.cpg
+
+.vscode/
+
+.DS_Store
+Thumbs.db

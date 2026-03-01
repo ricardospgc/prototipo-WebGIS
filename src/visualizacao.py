@@ -1,7 +1,8 @@
 import folium
 from branca.element import Template, MacroElement
 
-def otimizar_interface_mobile(fmap):
+# Deixa a interface mais funcional e bonita
+def otimizar_interface(fmap):
     template = """
     {% macro script(this, kwargs) %}
     var style = document.createElement('style');
@@ -63,10 +64,10 @@ def otimizar_interface_mobile(fmap):
     fmap.add_child(macro)
     return fmap
 
+# Dicionário com os tipos de equipamentos e os estilos do marcador
 def obter_estilo_por_tipo():
     """
-    Retorna um dicionário de mapeamento para ícones e cores.
-    Centralizamos aqui para facilitar a manutenção.
+    Retorna um dicionário de mapeamento para ícones e cores dos marcadores
     """
     return {
         'CAMPO DE FUTEBOL':        {'cor': 'lightgreen',  'icon': 'soccer-ball', 'prefix': 'fa','sufix': 'o'},
@@ -79,10 +80,11 @@ def obter_estilo_por_tipo():
         'GINÁSIO':                 {'cor': 'purple', 'icon': 'building',      'prefix': 'fa'},
         'QUADRA DE PETECA':        {'cor': 'beige', 'icon': 'rocket',      'prefix': 'fa'},
         'QUADRA RECREATIVA':       {'cor': 'lightred', 'icon': 'bolt',      'prefix': 'fa'},
-        # Default para tipos não mapeados
+        
         'PADRAO':                  {'cor': 'gray',   'icon': 'info-sign',     'prefix': 'glyphicon'}
     }
 
+# Alternar entre camadas do OpenStreetMap e satélite
 def configurar_camadas_base(fmap):
     folium.TileLayer('openstreetmap', name='OpenStreetMap').add_to(fmap)
     folium.TileLayer(
@@ -91,6 +93,7 @@ def configurar_camadas_base(fmap):
     ).add_to(fmap)
     return fmap
 
+# Criação dos marcadores
 def criar_marcador_esportivo(row, estilos):
     """
     Usa o dicionário de estilos para montar o marcador.

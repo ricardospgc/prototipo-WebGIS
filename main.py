@@ -39,12 +39,11 @@ def main():
     folium.GeoJson(gdf_BH, name="Limite Municipal", 
                    style_function=lambda x: {'color':'blue', 'fillOpacity':0}).add_to(fmap)
 
-    # MENU DROPDOWN
-    # collapsed=True faz o menu virar um ícone pequeno que expande ao clicar
+    # Menu dropdown para controle de camadas e filtro de marcadores
     folium.LayerControl(collapsed=True).add_to(fmap)
 
     # Interface Mobile e Botão Toggle
-    vis.otimizar_interface_mobile(fmap)
+    vis.otimizar_interface(fmap)
 
     # Salvamento do mapa
     fmap.save('maps/mapa_equipamento_esportivo_bh.html')
